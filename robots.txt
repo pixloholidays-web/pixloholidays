@@ -1,0 +1,48 @@
+# Pixlo Holidays - Search Engine Crawling Rules
+# This robots.txt file guides search engine bots on how to crawl and index the website
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow private/admin paths (if any are added in future)
+Disallow: /admin/
+Disallow: /.well-known/
+Disallow: /private/
+
+# Allow search engines to crawl CSS, JS, and images
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Specify sitemap location for search engines
+Sitemap: https://pixloholidays.com/sitemap.xml
+
+# Crawl delay and request rate (in seconds)
+# Most search engines can handle faster crawling, adjust if server load is an issue
+Crawl-delay: 1
+
+# Google-specific rules (optional)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific rules (optional)
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Facebook & social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
