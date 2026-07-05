@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pixlo Holidays | Signature Travel Experiences</title>
+    <title>Pixlo Holidays | Signature Travel Experiences in Himachal, Goa & Kerala</title>
     <meta
       name="description"
       content="Pixlo Holidays crafts premium, thoughtfully designed travel journeys across Himachal, Goa, and Kerala with seamless planning and immersive experiences."
     />
+    <meta name="keywords" content="Pixlo Holidays, travel packages, Himachal tour, Goa tour, Kerala tour, India travel, vacation packages, hill station tours, beach holidays, houseboat tours" />
+    <meta name="author" content="Pixlo Holidays" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pixloholidays.com/" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Pixlo Holidays | Signature Travel Experiences" />
+    <meta property="og:description" content="Premium travel journeys across Himachal, Goa, and Kerala with seamless planning and immersive experiences." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pixloholidays.com/" />
+    <meta property="og:image" content="https://pixloholidays.com/pixlo-logo.png" />
+    <meta property="og:site_name" content="Pixlo Holidays" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pixlo Holidays | Signature Travel Experiences" />
+    <meta name="twitter:description" content="Premium travel journeys across Himachal, Goa, and Kerala with seamless planning and immersive experiences." />
+    <meta name="twitter:image" content="https://pixloholidays.com/pixlo-logo.png" />
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Pixlo Holidays" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -35,10 +59,86 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Pixlo Holidays",
+      "url": "https://pixloholidays.com/",
+      "logo": "https://pixloholidays.com/pixlo-logo.png",
+      "description": "Pixlo Holidays crafts premium, thoughtfully designed travel journeys across Himachal, Goa, and Kerala with seamless planning and immersive experiences.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-7021662074",
+        "contactType": "Customer Service",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Travel Packages",
+        "availableTour": [
+          {
+            "@type": "TouristTrip",
+            "name": "Himachal: Shimla & Manali Tour",
+            "description": "5 Nights / 6 Days hill journey through colonial charm, alpine valleys, and snow-dotted adventures"
+          },
+          {
+            "@type": "TouristTrip",
+            "name": "Go Goa: North & South Goa Tour",
+            "description": "3 Nights / 4 Days coastal escape blending sunlit beaches and heritage sites"
+          },
+          {
+            "@type": "TouristTrip",
+            "name": "Magical Kerala Tour",
+            "description": "4 Nights / 5 Days journey from Cochin to Munnar, Thekkady, and Alleppey"
+          }
+        ]
+      }
+    }
+    </script>
     <style>
       html { scroll-behavior: smooth; }
       body { font-family: 'Poppins', sans-serif; }
       h1, h2, h3 { font-family: 'Playfair Display', serif; }
+      
+      /* Skip link for accessibility */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #0F172A;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 0 0 4px 4px;
+        text-decoration: none;
+        z-index: 100;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+      
+      /* Hero animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .hero-badge {
+        animation: float 6s ease-in-out infinite;
+      }
+      .hero-content {
+        animation: fadeInUp 1s ease-out;
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
       .inclusion-badge::before { content: '✓'; }
       .exclusion-badge::before { content: '✕'; }
       details summary::-webkit-details-marker { display: none; }
@@ -60,78 +160,85 @@
     </style>
   </head>
   <body class="bg-slate-50 text-slate-700">
-    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md rounded-b-3xl">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="sticky top-0 z-50 border-b border-slate-200/60 bg-white/90 backdrop-blur-xl rounded-b-3xl shadow-sm">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="#home" class="flex items-center gap-3 group">
-          <div class="logo-container h-16 w-16 rounded-full flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-110 group-hover:shadow-lg">
-            <img src="pixlo-logo.png" alt="Pixlo Holidays logo" class="h-12 w-auto object-contain transition group-hover:scale-105" loading="lazy" decoding="async" />
+          <div class="logo-container h-14 w-14 rounded-full flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-110 group-hover:shadow-lg">
+            <img src="pixlo-logo.png" alt="Pixlo Holidays logo" class="h-10 w-auto object-contain transition group-hover:scale-105" loading="lazy" decoding="async" />
           </div>
           <div>
-            <p class="text-lg font-semibold text-pixlo-navy transition group-hover:text-pixlo-teal">Pixlo Holidays</p>
-            <p class="text-sm text-slate-500">Explore.Deam.Discover</p>
+            <p class="text-xl font-bold text-pixlo-navy transition group-hover:text-pixlo-teal">Pixlo Holidays</p>
+            <p class="text-xs text-slate-500 -mt-0.5">Explore.Dream.Discover</p>
           </div>
         </a>
-        <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-          <a href="#tours" class="transition hover:text-pixlo-teal hover:font-semibold">Destinations</a>
-          <a href="#policies" class="transition hover:text-pixlo-teal hover:font-semibold">Policies</a>
-          <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20escape." target="_blank" rel="noopener noreferrer" class="rounded-full bg-pixlo-accent px-4 py-2 font-semibold text-white transition hover:bg-amber-600 shadow-md hover:shadow-lg">
-            Plan Your Escape
-          </a>
-        </nav>
+    <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Main navigation">
+      <a href="#tours" class="relative transition hover:text-pixlo-teal group" aria-label="View our tour destinations">
+        <span>Destinations</span>
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pixlo-teal transition-all group-hover:w-full"></span>
+      </a>
+      <a href="#policies" class="relative transition hover:text-pixlo-teal group" aria-label="View our policies">
+        <span>Policies</span>
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pixlo-teal transition-all group-hover:w-full"></span>
+      </a>
+      <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20escape." target="_blank" rel="noopener noreferrer" class="rounded-full bg-pixlo-accent px-5 py-2.5 font-semibold text-white transition hover:bg-amber-600 shadow-lg hover:shadow-xl" aria-label="Plan your escape via WhatsApp">
+        Plan Your Escape
+      </a>
+    </nav>
       </div>
     </header>
 
-    <main id="home">
-      <section class="relative overflow-hidden bg-pixlo-navy text-white">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-pixlo-navy/95 via-pixlo-navy/90 to-slate-900/80"></div>
-        <div class="relative mx-auto grid min-h-[88vh] max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
-          <div class="max-w-2xl">
-            <p class="mb-4 inline-flex rounded-full border border-pixlo-teal/30 bg-pixlo-teal/10 px-3 py-1 text-sm font-medium tracking-[0.2em] text-pixlo-teal uppercase">
+    <main id="home" role="main">
+      <section class="relative overflow-hidden bg-pixlo-navy text-white" aria-label="Hero section - Premium travel experiences">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=2400&q=100')] bg-cover bg-center" role="img" aria-label="Stunning aerial view of Himalayan mountains with snow peaks"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-pixlo-navy/90 via-pixlo-navy/80 to-transparent"></div>
+        <div class="relative mx-auto grid min-h-[90vh] max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 lg:py-32">
+          <div class="max-w-2xl" id="main-content">
+            <p class="mb-4 inline-flex rounded-full border border-pixlo-teal/40 bg-pixlo-teal/15 px-4 py-1.5 text-sm font-medium tracking-[0.2em] text-pixlo-teal uppercase hero-badge">
               Curated escapes with thoughtful detail
             </p>
-            <h1 class="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
+            <h1 class="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl xl:text-7xl hero-content">
               Discover India beautifully with Pixlo Holidays.
             </h1>
-            <p class="mt-6 text-lg leading-8 text-slate-200 sm:text-xl">
+            <p class="mt-6 text-lg leading-8 text-slate-200 sm:text-xl lg:text-2xl hero-content" style="animation-delay: 0.2s;">
               From misty mountains and beachside serenity to verdant hill stations and cultural heritage, our itineraries are designed for travelers who value comfort, authenticity, and effortless planning.
             </p>
-            <div class="mt-8 flex flex-wrap gap-4">
-              <a href="#tours" class="rounded-full bg-pixlo-accent px-6 py-3 text-base font-semibold text-white shadow-lg shadow-pixlo-accent/30 transition hover:translate-y-[-2px] hover:bg-amber-600">
+            <div class="mt-10 flex flex-wrap gap-5 hero-content" style="animation-delay: 0.4s;">
+              <a href="#tours" class="rounded-full bg-pixlo-accent px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-pixlo-accent/40 transition hover:translate-y-[-3px] hover:bg-amber-600 hover:shadow-2xl">
                 Explore Itineraries
               </a>
-              <a href="#policies" class="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white transition hover:bg-pixlo-teal/20 hover:border-pixlo-teal/50">
+              <a href="#policies" class="rounded-full border-2 border-white/40 bg-white/15 px-8 py-4 text-lg font-semibold text-white transition hover:bg-pixlo-teal/25 hover:border-pixlo-teal/50 backdrop-blur-sm">
                 View Policies
               </a>
             </div>
           </div>
-          <div class="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-soft backdrop-blur-sm">
-            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Why travelers choose us</p>
-            <div class="mt-6 space-y-4">
-              <div class="rounded-2xl bg-white/95 p-4 text-slate-700">
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
+          <div class="rounded-3xl border-2 border-white/25 bg-white/10 p-8 shadow-soft backdrop-blur-md">
+            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal mb-6">Why travelers choose us</p>
+            <div class="space-y-5">
+              <div class="rounded-2xl bg-white/90 p-5 text-slate-700 shadow-sm">
+                <div class="flex items-start gap-4">
+                  <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
                   <div>
-                    <p class="font-semibold text-pixlo-navy">Seamless planning</p>
-                    <p class="mt-1 text-sm">Thoughtfully paced routes, reliable transfers, and premium support from arrival to departure.</p>
+                    <p class="font-semibold text-pixlo-navy text-lg">Seamless planning</p>
+                    <p class="mt-1.5 text-sm">Thoughtfully paced routes, reliable transfers, and premium support from arrival to departure.</p>
                   </div>
                 </div>
               </div>
-              <div class="rounded-2xl bg-white/95 p-4 text-slate-700">
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
+              <div class="rounded-2xl bg-white/90 p-5 text-slate-700 shadow-sm">
+                <div class="flex items-start gap-4">
+                  <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
                   <div>
-                    <p class="font-semibold text-pixlo-navy">Immersive experiences</p>
-                    <p class="mt-1 text-sm">Signature sightseeing, local culture, scenic adventures, and memorable hospitality.</p>
+                    <p class="font-semibold text-pixlo-navy text-lg">Immersive experiences</p>
+                    <p class="mt-1.5 text-sm">Signature sightseeing, local culture, scenic adventures, and memorable hospitality.</p>
                   </div>
                 </div>
               </div>
-              <div class="rounded-2xl bg-white/95 p-4 text-slate-700">
-                <div class="flex items-start gap-3">
-                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
+              <div class="rounded-2xl bg-white/90 p-5 text-slate-700 shadow-sm">
+                <div class="flex items-start gap-4">
+                  <span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
                   <div>
-                    <p class="font-semibold text-pixlo-navy">Tailor-made journeys</p>
-                    <p class="mt-1 text-sm">Every itinerary is crafted to reflect your pace, travel style, and bucket-list moments.</p>
+                    <p class="font-semibold text-pixlo-navy text-lg">Tailor-made journeys</p>
+                    <p class="mt-1.5 text-sm">Every itinerary is crafted to reflect your pace, travel style, and bucket-list moments.</p>
                   </div>
                 </div>
               </div>
