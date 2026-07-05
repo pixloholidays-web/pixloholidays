@@ -15,15 +15,15 @@
           extend: {
             colors: {
               pixlo: {
-                navy: '#0F2A4A',
-                blue: '#164C7A',
+                navy: '#0F172A',
+                teal: '#0D9488',
                 accent: '#F59E0B',
                 cream: '#F8FAFC',
                 slate: '#475569'
               }
             },
             boxShadow: {
-              soft: '0 20px 60px -20px rgba(15, 42, 74, 0.35)'
+              soft: '0 20px 60px -20px rgba(15, 23, 42, 0.35)'
             }
           }
         }
@@ -32,28 +32,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       html { scroll-behavior: smooth; }
-      body { font-family: 'Inter', sans-serif; }
+      body { font-family: 'Poppins', sans-serif; }
+      h1, h2, h3 { font-family: 'Playfair Display', serif; }
+      .inclusion-badge::before { content: '✓'; }
+      .exclusion-badge::before { content: '✕'; }
+      details summary::-webkit-details-marker { display: none; }
+      details summary::before { content: '▶'; display: inline-block; margin-right: 0.75rem; transition: transform 0.2s; }
+      details[open] summary::before { transform: rotate(90deg); }
+      .logo-container {
+        border: 2px solid rgba(13, 148, 136, 0.3);
+        box-shadow: 0 8px 32px rgba(13, 148, 136, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+      }
+      .logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 0.25rem;
+      }
+
     </style>
   </head>
   <body class="bg-slate-50 text-slate-700">
-    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-md rounded-b-3xl">
       <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#home" class="flex items-center gap-3">
-          <img src="pixlo-logo.png" alt="Pixlo Holidays logo" class="h-12 w-auto object-contain" />
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="logo-container h-16 w-16 rounded-full flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-110 group-hover:shadow-lg">
+            <img src="pixlo-logo.png" alt="Pixlo Holidays logo" class="h-12 w-auto object-contain transition group-hover:scale-105" loading="lazy" decoding="async" />
+          </div>
           <div>
-            <p class="text-lg font-semibold text-pixlo-navy">Pixlo Holidays</p>
-            <p class="text-sm text-slate-500">Holiday Crafting</p>
+            <p class="text-lg font-semibold text-pixlo-navy transition group-hover:text-pixlo-teal">Pixlo Holidays</p>
+            <p class="text-sm text-slate-500">Explore.Deam.Discover</p>
           </div>
         </a>
         <nav class="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-          <a href="#tours" class="transition hover:text-pixlo-blue">Destinations</a>
-          <a href="#policies" class="transition hover:text-pixlo-blue">Policies</a>
-          <a href="https://wa.me/917021662074" target="_blank" rel="noopener noreferrer" class="rounded-full bg-pixlo-accent px-4 py-2 font-semibold text-white transition hover:bg-amber-500">
+          <a href="#tours" class="transition hover:text-pixlo-teal hover:font-semibold">Destinations</a>
+          <a href="#policies" class="transition hover:text-pixlo-teal hover:font-semibold">Policies</a>
+          <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20escape." target="_blank" rel="noopener noreferrer" class="rounded-full bg-pixlo-accent px-4 py-2 font-semibold text-white transition hover:bg-amber-600 shadow-md hover:shadow-lg">
             Plan Your Escape
           </a>
         </nav>
@@ -63,10 +84,10 @@
     <main id="home">
       <section class="relative overflow-hidden bg-pixlo-navy text-white">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-pixlo-navy/90 via-pixlo-navy/80 to-slate-900/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-pixlo-navy/95 via-pixlo-navy/90 to-slate-900/80"></div>
         <div class="relative mx-auto grid min-h-[88vh] max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
           <div class="max-w-2xl">
-            <p class="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-medium tracking-[0.2em] text-slate-100 uppercase">
+            <p class="mb-4 inline-flex rounded-full border border-pixlo-teal/30 bg-pixlo-teal/10 px-3 py-1 text-sm font-medium tracking-[0.2em] text-pixlo-teal uppercase">
               Curated escapes with thoughtful detail
             </p>
             <h1 class="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
@@ -76,28 +97,43 @@
               From misty mountains and beachside serenity to verdant hill stations and cultural heritage, our itineraries are designed for travelers who value comfort, authenticity, and effortless planning.
             </p>
             <div class="mt-8 flex flex-wrap gap-4">
-              <a href="#tours" class="rounded-full bg-pixlo-accent px-6 py-3 text-base font-semibold text-white shadow-lg shadow-pixlo-accent/30 transition hover:translate-y-[-2px] hover:bg-amber-500">
+              <a href="#tours" class="rounded-full bg-pixlo-accent px-6 py-3 text-base font-semibold text-white shadow-lg shadow-pixlo-accent/30 transition hover:translate-y-[-2px] hover:bg-amber-600">
                 Explore Itineraries
               </a>
-              <a href="#policies" class="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/20">
+              <a href="#policies" class="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white transition hover:bg-pixlo-teal/20 hover:border-pixlo-teal/50">
                 View Policies
               </a>
             </div>
           </div>
-          <div class="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-soft backdrop-blur">
-            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-100">Why travelers choose us</p>
+          <div class="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-soft backdrop-blur-sm">
+            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Why travelers choose us</p>
             <div class="mt-6 space-y-4">
-              <div class="rounded-2xl bg-white/90 p-4 text-slate-700">
-                <p class="font-semibold text-pixlo-navy">Seamless planning</p>
-                <p class="mt-1 text-sm">Thoughtfully paced routes, reliable transfers, and premium support from arrival to departure.</p>
+              <div class="rounded-2xl bg-white/95 p-4 text-slate-700">
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
+                  <div>
+                    <p class="font-semibold text-pixlo-navy">Seamless planning</p>
+                    <p class="mt-1 text-sm">Thoughtfully paced routes, reliable transfers, and premium support from arrival to departure.</p>
+                  </div>
+                </div>
               </div>
-              <div class="rounded-2xl bg-white/90 p-4 text-slate-700">
-                <p class="font-semibold text-pixlo-navy">Immersive experiences</p>
-                <p class="mt-1 text-sm">Signature sightseeing, local culture, scenic adventures, and memorable hospitality.</p>
+              <div class="rounded-2xl bg-white/95 p-4 text-slate-700">
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
+                  <div>
+                    <p class="font-semibold text-pixlo-navy">Immersive experiences</p>
+                    <p class="mt-1 text-sm">Signature sightseeing, local culture, scenic adventures, and memorable hospitality.</p>
+                  </div>
+                </div>
               </div>
-              <div class="rounded-2xl bg-white/90 p-4 text-slate-700">
-                <p class="font-semibold text-pixlo-navy">Tailor-made journeys</p>
-                <p class="mt-1 text-sm">Every itinerary is crafted to reflect your pace, travel style, and bucket-list moments.</p>
+              <div class="rounded-2xl bg-white/95 p-4 text-slate-700">
+                <div class="flex items-start gap-3">
+                  <span class="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white flex-shrink-0">✓</span>
+                  <div>
+                    <p class="font-semibold text-pixlo-navy">Tailor-made journeys</p>
+                    <p class="mt-1 text-sm">Every itinerary is crafted to reflect your pace, travel style, and bucket-list moments.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -105,18 +141,18 @@
       </section>
 
       <section class="mx-auto max-w-7xl px-4 -mt-8 pb-20 sm:px-6 lg:px-8">
-        <div class="rounded-[32px] border border-slate-200 bg-gradient-to-br from-pixlo-navy via-pixlo-blue to-slate-900 p-8 text-white shadow-soft sm:p-10">
+        <div class="rounded-[32px] border border-slate-200 bg-gradient-to-br from-pixlo-navy via-slate-900 to-slate-900 p-8 text-white shadow-soft sm:p-10">
           <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div class="max-w-2xl">
-              <p class="text-sm font-semibold uppercase tracking-[0.25em] text-amber-200">Tailor-made journeys</p>
+              <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Tailor-made journeys</p>
               <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Plan your next escape with a dedicated travel specialist.</h2>
               <p class="mt-4 text-lg leading-8 text-slate-200">Message us on WhatsApp to begin your journey with a beautifully curated itinerary and thoughtful guidance.</p>
             </div>
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="https://wa.me/917021662074" target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-pixlo-accent px-6 py-3 text-base font-semibold text-white transition hover:bg-amber-500">
+              <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20escape." target="_blank" rel="noopener noreferrer" class="inline-flex rounded-full bg-pixlo-accent px-6 py-3 text-base font-semibold text-white transition hover:bg-amber-600 shadow-md">
                 Start WhatsApp Chat
               </a>
-              <a href="mailto:pixloholidays@gmail.com" class="inline-flex rounded-full border border-white/30 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10">
+              <a href="mailto:pixloholidays@gmail.com" class="inline-flex rounded-full border border-pixlo-teal/50 bg-pixlo-teal/10 px-6 py-3 text-base font-semibold text-white transition hover:bg-pixlo-teal/20">
                 pixloholidays@gmail.com
               </a>
             </div>
@@ -126,7 +162,7 @@
 
       <section id="tours" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <div class="mb-10 max-w-3xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-accent">Signature itineraries</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Signature itineraries</p>
           <h2 class="mt-3 text-3xl font-bold text-pixlo-navy sm:text-4xl">
             Three standout journeys, thoughtfully delivered.
           </h2>
@@ -140,7 +176,7 @@
             <div class="lg:grid lg:grid-cols-[2fr_1fr]">
               <div class="p-6 sm:p-8 lg:p-10">
                 <div class="flex flex-wrap items-center gap-3">
-                  <span class="rounded-full bg-pixlo-blue/10 px-3 py-1 text-sm font-semibold text-pixlo-blue">Himachal</span>
+                  <span class="rounded-full bg-pixlo-teal/10 px-3 py-1 text-sm font-semibold text-pixlo-teal">Himachal</span>
                   <span class="text-sm text-slate-500">5 Nights / 6 Days</span>
                 </div>
                 <h3 class="mt-4 text-2xl font-bold text-pixlo-navy sm:text-3xl">Himachal: Shimla & Manali Tour</h3>
@@ -151,28 +187,28 @@
                 <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
                   <h4 class="text-lg font-semibold text-pixlo-navy">Day-by-day itinerary</h4>
                   <div class="mt-4 space-y-3">
-                    <details class="rounded-xl border border-slate-200 bg-white p-4" open>
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 1: Chandigarh Arrival & Drive to Shimla</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition" open>
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 1: Chandigarh Arrival & Drive to Shimla</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Arrive at the designated Chandigarh Airport / Railway Station pickup point. Meet your private Pixlo Holidays representative and board the AC vehicle for a scenic drive uphill to Shimla. Check into your hotel.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 2: Shimla & Kufri Sightseeing</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 2: Shimla & Kufri Sightseeing</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Enjoy breakfast and head out to explore Kufri, Green Valley, and Fagu Valley. Spend your evening walking along The Ridge, Mall Road, Christ Church, and Scandal Point. Enjoy dinner and overnight stay at the Shimla hotel.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 3: Shimla to Manali via Kullu Valley</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 3: Shimla to Manali via Kullu Valley</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">After breakfast, check out and drive towards Manali. En route, catch vistas of the Pandoh Dam and stop by the vibrant Kullu river rafting points and local shawl weaving factories. Check into your Manali hotel for dinner and rest.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 4: Manali Local Exploration & Jogini Waterfall Trek</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 4: Manali Local Exploration & Jogini Waterfall Trek</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Embark on an adventurous trek to Jogini Waterfall alongside a local guide. Visit the historic Hadimba Devi Temple, Vashisht Hot Springs, Tibetan Monastery, and Van Vihar. Evening free to stroll around Manali Mall Road.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 5: Solang Valley & Atal Tunnel Excursion</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 5: Solang Valley & Atal Tunnel Excursion</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Drive to Solang Valley for snow sports and paragliding activities. Cross through the iconic Atal Tunnel (subject to weather and permit availability). Return to the hotel for a special complimentary candle-light dinner.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 6: Manali to Ambala Departure</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 6: Manali to Ambala Departure</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Have breakfast, check out from the hotel, and board your return transfer vehicle heading towards Ambala Railway Station / Airport for your onward journey home.</p>
                     </details>
                   </div>
@@ -180,24 +216,63 @@
 
                 <div class="mt-8 grid gap-6 md:grid-cols-2">
                   <div>
-                    <h4 class="text-lg font-semibold text-pixlo-navy">Inclusions</h4>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                      <li>• Complete inter-city transfers and sightseeing via dedicated AC vehicle.</li>
-                      <li>• 1 Night in Shimla and 3 Nights in Manali.</li>
-                      <li>• 5 Breakfasts and 5 Dinners at hotels.</li>
-                      <li>• Local trekking guide for Jogini Waterfall.</li>
-                      <li>• Tolls, parking, driver allowances, and state transport taxes.</li>
-                      <li>• Complimentary candle-light dinner and flower bed decoration.</li>
+                    <h4 class="text-lg font-semibold text-pixlo-navy mb-3 flex items-center gap-2">
+                      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white">✓</span>
+                      Inclusions
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Complete inter-city transfers and sightseeing via dedicated AC vehicle.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>1 Night in Shimla and 3 Nights in Manali.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>5 Breakfasts and 5 Dinners at hotels.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Local trekking guide for Jogini Waterfall.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Tolls, parking, driver allowances, and state transport taxes.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Complimentary candle-light dinner and flower bed decoration.</span>
+                      </li>
                     </ul>
                   </div>
                   <div>
-                    <h4 class="text-lg font-semibold text-pixlo-navy">Exclusions</h4>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                      <li>• 5% GST additional on the final invoice.</li>
-                      <li>• Rohtang Pass entry charges are extra and self-borne.</li>
-                      <li>• Adventure sport equipment fees, snow suit rentals, and pony rides.</li>
-                      <li>• Room heater deployment charges and laundry tips.</li>
-                      <li>• Additional costs due to landslides, roadblocks, or weather anomalies.</li>
+                    <h4 class="text-lg font-semibold text-pixlo-navy mb-3 flex items-center gap-2">
+                      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-600">✕</span>
+                      Exclusions
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>5% GST additional on the final invoice.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Rohtang Pass entry charges are extra and self-borne.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Adventure sport equipment fees, snow suit rentals, and pony rides.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Room heater deployment charges and laundry tips.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Additional costs due to landslides, roadblocks, or weather anomalies.</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -205,10 +280,10 @@
 
               <aside class="border-t border-slate-200 bg-pixlo-cream p-6 sm:p-8 lg:border-l lg:border-t-0">
                 <div class="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-                  <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-accent">Need a custom plan?</p>
+                  <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Need a custom plan?</p>
                   <h3 class="mt-2 text-2xl font-bold text-pixlo-navy">Let Pixlo Holidays craft your perfect escape</h3>
                   <p class="mt-3 text-sm leading-7 text-slate-600">Message us directly on WhatsApp for a quick response and a tailored itinerary suggestion.</p>
-                  <a href="https://wa.me/917021662074" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-4 py-3 text-base font-semibold text-white transition hover:bg-amber-500">
+                  <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20Himachal%20escape." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-4 py-3 text-base font-semibold text-white transition hover:bg-amber-600 shadow-md">
                     Chat on WhatsApp
                   </a>
                 </div>
@@ -220,7 +295,7 @@
             <div class="lg:grid lg:grid-cols-[2fr_1fr]">
               <div class="p-6 sm:p-8 lg:p-10">
                 <div class="flex flex-wrap items-center gap-3">
-                  <span class="rounded-full bg-pixlo-blue/10 px-3 py-1 text-sm font-semibold text-pixlo-blue">Goa</span>
+                  <span class="rounded-full bg-pixlo-teal/10 px-3 py-1 text-sm font-semibold text-pixlo-teal">Goa</span>
                   <span class="text-sm text-slate-500">3 Nights / 4 Days</span>
                 </div>
                 <h3 class="mt-4 text-2xl font-bold text-pixlo-navy sm:text-3xl">Go Goa: North & South Goa Tour</h3>
@@ -231,20 +306,20 @@
                 <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
                   <h4 class="text-lg font-semibold text-pixlo-navy">Day-by-day itinerary</h4>
                   <div class="mt-4 space-y-3">
-                    <details class="rounded-xl border border-slate-200 bg-white p-4" open>
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 1: Goa Arrival & Leisure</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition" open>
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 1: Goa Arrival & Leisure</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Get picked up from Goa Airport or Madgaon/Thivim Railway Station by a Pixlo Holidays chauffeur. Check into your beachside hotel. Spend the day adjusting to the Goan vibe or visiting the local markets. Dinner at hotel.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 2: North Goa Beach & Fort Tour</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 2: North Goa Beach & Fort Tour</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">After breakfast, drive out for North Goa sightseeing. Visit the 17th-century Fort Aguada, followed by the vibrant Vagator Beach, Anjuna Beach viewpoint, and the lively shacks of Baga Beach and Calangute Beach. Return to hotel by evening.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 3: South Goa Heritage & Cruise Experience</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 3: South Goa Heritage & Cruise Experience</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Explore the historic side of Goa. Tour the UNESCO heritage site Basilica of Bom Jesus, Se Cathedral, and Mangeshi Temple. Head to the Mandovi River cruise point for a scenic sunset river cruise.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 4: Departure from Goa</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 4: Departure from Goa</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Enjoy a final Goan breakfast, check out, and receive a timely drop-off at the airport or station for your journey home.</p>
                     </details>
                   </div>
@@ -252,23 +327,59 @@
 
                 <div class="mt-8 grid gap-6 md:grid-cols-2">
                   <div>
-                    <h4 class="text-lg font-semibold text-pixlo-navy">Inclusions</h4>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                      <li>• Airport / Railway Station pickup and drop-off via private car.</li>
-                      <li>• 3 Nights stay at a standard boutique property.</li>
-                      <li>• 3 Breakfasts and 3 Dinners.</li>
-                      <li>• 1 Full Day North Goa and 1 Full Day South Goa tour.</li>
-                      <li>• Access to the hotel swimming pool where operational.</li>
-                      <li>• Parking fees, fuel costs, and local state driver toll taxes.</li>
+                    <h4 class="text-lg font-semibold text-pixlo-navy mb-3 flex items-center gap-2">
+                      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white">✓</span>
+                      Inclusions
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Airport / Railway Station pickup and drop-off via private car.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>3 Nights stay at a standard boutique property.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>3 Breakfasts and 3 Dinners.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>1 Full Day North Goa and 1 Full Day South Goa tour.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Access to the hotel swimming pool where operational.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Parking fees, fuel costs, and local state driver toll taxes.</span>
+                      </li>
                     </ul>
                   </div>
                   <div>
-                    <h4 class="text-lg font-semibold text-pixlo-navy">Exclusions</h4>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                      <li>• 5% GST extra on total invoicing.</li>
-                      <li>• River cruise tickets, Snow Park entry, and Fort Aguada monument fees.</li>
-                      <li>• Jet ski, parasailing, and banana boat ride tariffs at the beaches.</li>
-                      <li>• Travel insurance, phone bills, alcoholic beverages, and room service.</li>
+                    <h4 class="text-lg font-semibold text-pixlo-navy mb-3 flex items-center gap-2">
+                      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-600">✕</span>
+                      Exclusions
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>5% GST extra on total invoicing.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>River cruise tickets, Snow Park entry, and Fort Aguada monument fees.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Jet ski, parasailing, and banana boat ride tariffs at the beaches.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Travel insurance, phone bills, alcoholic beverages, and room service.</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -276,10 +387,10 @@
 
               <aside class="border-t border-slate-200 bg-pixlo-cream p-6 sm:p-8 lg:border-l lg:border-t-0">
                 <div class="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-                  <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-accent">Need a custom plan?</p>
+                  <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Need a custom plan?</p>
                   <h3 class="mt-2 text-2xl font-bold text-pixlo-navy">Let Pixlo Holidays craft your perfect escape</h3>
                   <p class="mt-3 text-sm leading-7 text-slate-600">Message us directly on WhatsApp for a quick response and a tailored itinerary suggestion.</p>
-                  <a href="https://wa.me/917021662074" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-4 py-3 text-base font-semibold text-white transition hover:bg-amber-500">
+                  <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20Goa%20escape." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-4 py-3 text-base font-semibold text-white transition hover:bg-amber-600 shadow-md">
                     Chat on WhatsApp
                   </a>
                 </div>
@@ -291,7 +402,7 @@
             <div class="lg:grid lg:grid-cols-[2fr_1fr]">
               <div class="p-6 sm:p-8 lg:p-10">
                 <div class="flex flex-wrap items-center gap-3">
-                  <span class="rounded-full bg-pixlo-blue/10 px-3 py-1 text-sm font-semibold text-pixlo-blue">Kerala</span>
+                  <span class="rounded-full bg-pixlo-teal/10 px-3 py-1 text-sm font-semibold text-pixlo-teal">Kerala</span>
                   <span class="text-sm text-slate-500">4 Nights / 5 Days</span>
                 </div>
                 <h3 class="mt-4 text-2xl font-bold text-pixlo-navy sm:text-3xl">Magical Kerala Tour</h3>
@@ -302,24 +413,24 @@
                 <div class="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
                   <h4 class="text-lg font-semibold text-pixlo-navy">Day-by-day itinerary</h4>
                   <div class="mt-4 space-y-3">
-                    <details class="rounded-xl border border-slate-200 bg-white p-4" open>
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 1: Cochin Arrival to Munnar Hill Station</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition" open>
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 1: Cochin Arrival to Munnar Hill Station</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Arrive at Cochin Airport/Station. Meet your driver and drive towards Munnar. On the way, stop by Cheeyappara and Valara waterfalls. Check into your Munnar resort.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 2: Munnar Tea Gardens Exploration</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 2: Munnar Tea Gardens Exploration</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Spend a full day exploring Munnar. Visit Mattupetty Dam, Echo Point, the lush green Rose Garden, and the Eravikulam National Park to spot the Nilgiri Tahr. Return for an overnight stay.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 3: Munnar to Thekkady Wildlife Sanctuary</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 3: Munnar to Thekkady Wildlife Sanctuary</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Drive from Munnar to Thekkady. Check into your hotel and head out to see spice plantations. In the evening, enjoy traditional Kathakali and Martial Arts (Kalaripayattu) live shows.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 4: Thekkady to Alleppey Houseboat Experience</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 4: Thekkady to Alleppey Houseboat Experience</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Proceed to Alleppey (Alappuzha). Board a traditional Kerala Houseboat for a cruise across the tranquil backwaters. Enjoy an authentic regional lunch and dinner served right on board.</p>
                     </details>
-                    <details class="rounded-xl border border-slate-200 bg-white p-4">
-                      <summary class="cursor-pointer list-none font-semibold text-slate-800">Day 5: Alleppey to Cochin Departure</summary>
+                    <details class="rounded-xl border border-slate-200 bg-white p-4 cursor-pointer hover:shadow-sm transition">
+                      <summary class="font-semibold text-slate-800 hover:text-pixlo-teal transition">Day 5: Alleppey to Cochin Departure</summary>
                       <p class="mt-3 text-sm leading-7 text-slate-600">Disembark from the houseboat after breakfast. Return transfer to Cochin for your evening train or flight back home.</p>
                     </details>
                   </div>
@@ -327,22 +438,55 @@
 
                 <div class="mt-8 grid gap-6 md:grid-cols-2">
                   <div>
-                    <h4 class="text-lg font-semibold text-pixlo-navy">Inclusions</h4>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                      <li>• 2 Nights in Munnar, 1 Night in Thekkady, and 1 Night in Alleppey.</li>
-                      <li>• 4 Breakfasts and 4 Dinners at the properties.</li>
-                      <li>• Entry tickets to the Kathakali and Martial Arts cultural shows.</li>
-                      <li>• Complete inter-city transfers and sightseeing via dedicated AC vehicle.</li>
-                      <li>• Driver allowances, state border taxes, fuel, and parking.</li>
+                    <h4 class="text-lg font-semibold text-pixlo-navy mb-3 flex items-center gap-2">
+                      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white">✓</span>
+                      Inclusions
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>2 Nights in Munnar, 1 Night in Thekkady, and 1 Night in Alleppey.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>4 Breakfasts and 4 Dinners at the properties.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Entry tickets to the Kathakali and Martial Arts cultural shows.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Complete inter-city transfers and sightseeing via dedicated AC vehicle.</span>
+                      </li>
+                      <li class="inclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-pixlo-teal/20 text-xs font-bold text-pixlo-teal flex-shrink-0">✓</span>
+                        <span>Driver allowances, state border taxes, fuel, and parking.</span>
+                      </li>
                     </ul>
                   </div>
                   <div>
-                    <h4 class="text-lg font-semibold text-pixlo-navy">Exclusions</h4>
-                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
-                      <li>• 5% statutory government tax extra.</li>
-                      <li>• Airfare or train tickets from your originating city.</li>
-                      <li>• Eravikulam National Park safari tickets and Periyar boating slips.</li>
-                      <li>• Premium or luxury upper-deck cruise modifications.</li>
+                    <h4 class="text-lg font-semibold text-pixlo-navy mb-3 flex items-center gap-2">
+                      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-600">✕</span>
+                      Exclusions
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>5% statutory government tax extra.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Airfare or train tickets from your originating city.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Eravikulam National Park safari tickets and Periyar boating slips.</span>
+                      </li>
+                      <li class="exclusion-badge flex items-start gap-3">
+                        <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600 flex-shrink-0">✕</span>
+                        <span>Premium or luxury upper-deck cruise modifications.</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -350,10 +494,10 @@
 
               <aside class="border-t border-slate-200 bg-pixlo-cream p-6 sm:p-8 lg:border-l lg:border-t-0">
                 <div class="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-                  <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-accent">Need a custom plan?</p>
+                  <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Need a custom plan?</p>
                   <h3 class="mt-2 text-2xl font-bold text-pixlo-navy">Let Pixlo Holidays craft your perfect escape</h3>
                   <p class="mt-3 text-sm leading-7 text-slate-600">Message us directly on WhatsApp for a quick response and a tailored itinerary suggestion.</p>
-                  <a href="https://wa.me/917021662074" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-4 py-3 text-base font-semibold text-white transition hover:bg-amber-500">
+                  <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20Kerala%20escape." target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-4 py-3 text-base font-semibold text-white transition hover:bg-amber-600 shadow-md">
                     Chat on WhatsApp
                   </a>
                 </div>
@@ -366,41 +510,87 @@
       <section id="policies" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <div class="rounded-[32px] border border-slate-200 bg-white p-6 shadow-soft sm:p-8 lg:p-10">
           <div class="max-w-3xl">
-            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-accent">Official policies</p>
+            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-pixlo-teal">Official policies</p>
             <h2 class="mt-3 text-3xl font-bold text-pixlo-navy sm:text-4xl">Transparent terms designed for confident travel planning.</h2>
           </div>
           <div class="mt-8 grid gap-8 lg:grid-cols-2">
-            <div>
-              <h3 class="text-xl font-semibold text-pixlo-navy">Payment & Booking Policy</h3>
+            <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+              <h3 class="text-xl font-semibold text-pixlo-navy flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white">$</span>
+                Payment & Booking Policy
+              </h3>
               <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-600">
-                <li>• A partial token registration deposit is required to securely block the inventory and hotel rooms.</li>
-                <li>• 50% of the remaining package balance must be settled 15 days before the departure date.</li>
-                <li>• The final remaining balance must be completely cleared upon arrival at the first destination point.</li>
-                <li>• Pixlo Holidays reserves the right to terminate bookings without liability if payments do not clear as per timelines.</li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-pixlo-teal font-bold">•</span>
+                  <span>A partial token registration deposit is required to securely block the inventory and hotel rooms.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-pixlo-teal font-bold">•</span>
+                  <span><strong>50% of the remaining package balance</strong> must be settled <strong>15 days before the departure date.</strong></span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-pixlo-teal font-bold">•</span>
+                  <span>The final remaining balance must be completely cleared upon arrival at the first destination point.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-red-600 font-bold">⚠</span>
+                  <span>Pixlo Holidays reserves the right to terminate bookings without liability if payments do not clear as per timelines.</span>
+                </li>
               </ul>
             </div>
-            <div>
-              <h3 class="text-xl font-semibold text-pixlo-navy">Operational Guidelines & Useful Info</h3>
+            <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+              <h3 class="text-xl font-semibold text-pixlo-navy flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-pixlo-teal text-sm font-bold text-white">✓</span>
+                Operational Guidelines & Useful Info
+              </h3>
               <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-600">
-                <li>• Air conditioning systems in vehicles will be turned off in hill stations and high-altitude climbs for engine safety and passenger security.</li>
-                <li>• Standard check-in time is 12:00 PM and check-out is 10:00 AM; early allocation depends on real-time availability.</li>
-                <li>• The driver will stick to the predefined itinerary locations; custom deviations are not permitted under standard contracts.</li>
-                <li>• All travelers must carry valid government-issued photo IDs. PAN cards are not accepted as proof of residence by hotels.</li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-pixlo-teal font-bold">•</span>
+                  <span>Air conditioning systems in vehicles will be turned off in hill stations and high-altitude climbs for engine safety and passenger security.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-pixlo-teal font-bold">•</span>
+                  <span>Standard check-in time is <strong>12:00 PM</strong> and check-out is <strong>10:00 AM</strong>; early allocation depends on real-time availability.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-pixlo-teal font-bold">•</span>
+                  <span>The driver will stick to the predefined itinerary locations; custom deviations are not permitted under standard contracts.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-red-600 font-bold">⚠</span>
+                  <span>All travelers must carry valid government-issued photo IDs. PAN cards are not accepted as proof of residence by hotels.</span>
+                </li>
               </ul>
             </div>
-            <div>
-              <h3 class="text-xl font-semibold text-pixlo-navy">Cancellation & Refund Schedule</h3>
+            <div class="rounded-2xl border border-orange-200 bg-orange-50 p-6">
+              <h3 class="text-xl font-semibold text-pixlo-navy flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">⏱</span>
+                Cancellation & Refund Schedule
+              </h3>
+              <p class="mt-2 text-xs font-semibold text-orange-700 uppercase tracking-wider">⚠ Critical Deadlines Below</p>
               <ul class="mt-4 space-y-3 text-sm leading-7 text-slate-600">
-                <li>• 30 days or more prior to departure: 25% penalty of the total package value.</li>
-                <li>• 15 to 29 days prior to departure: 50% penalty of the total package value.</li>
-                <li>• 8 to 14 days prior to departure: 75% penalty of the total package value.</li>
-                <li>• Within 7 days or no-show: 100% penalty, strictly non-refundable.</li>
+                <li class="flex items-start gap-3 p-3 rounded-xl bg-white border border-orange-100">
+                  <span class="mt-1 text-orange-600 font-bold">✕</span>
+                  <span><strong>30+ days prior:</strong> 25% penalty of total package value</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 rounded-xl bg-white border border-orange-100">
+                  <span class="mt-1 text-orange-600 font-bold">✕</span>
+                  <span><strong>15-29 days prior:</strong> 50% penalty of total package value</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 rounded-xl bg-white border border-red-200">
+                  <span class="mt-1 text-red-600 font-bold">✕</span>
+                  <span><strong>8-14 days prior:</strong> 75% penalty of total package value</span>
+                </li>
+                <li class="flex items-start gap-3 p-3 rounded-xl bg-red-50 border border-red-300">
+                  <span class="mt-1 text-red-700 font-bold">✕</span>
+                  <span><strong>Within 7 days or no-show:</strong> 100% penalty, strictly non-refundable</span>
+                </li>
               </ul>
             </div>
-            <div class="rounded-3xl bg-pixlo-navy p-6 text-white">
-              <h3 class="text-xl font-semibold">Ready to begin?</h3>
-              <p class="mt-3 text-sm leading-7 text-slate-200">Let us craft a thoughtfully paced itinerary that matches your travel goals, preferred pace, and sense of adventure.</p>
-              <a href="#home" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-500">
+            <div class="rounded-3xl bg-gradient-to-br from-pixlo-navy to-slate-900 p-6 text-white">
+              <h3 class="text-xl font-semibold">Ready to begin your journey?</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">Let us craft a thoughtfully paced itinerary that matches your travel goals, preferred pace, and sense of adventure.</p>
+              <a href="#home" class="mt-5 inline-flex rounded-full bg-pixlo-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-amber-600 shadow-md">
                 Start Planning With Pixlo Holidays
               </a>
             </div>
@@ -413,12 +603,12 @@
       <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div>
           <p>© 2026 Pixlo Holidays. Crafted for memorable journeys.</p>
-          <a href="mailto:pixloholidays@gmail.com" class="mt-1 inline-flex font-medium text-pixlo-blue hover:text-pixlo-navy">pixloholidays@gmail.com</a>
+          <a href="mailto:pixloholidays@gmail.com" class="mt-1 inline-flex font-medium text-pixlo-teal hover:text-pixlo-navy">pixloholidays@gmail.com</a>
         </div>
         <div class="flex gap-4">
-          <a href="#tours" class="transition hover:text-pixlo-blue">Destinations</a>
-          <a href="#policies" class="transition hover:text-pixlo-blue">Policies</a>
-          <a href="mailto:pixloholidays@gmail.com" class="transition hover:text-pixlo-blue">Contact</a>
+          <a href="#tours" class="transition hover:text-pixlo-teal hover:font-semibold">Destinations</a>
+          <a href="#policies" class="transition hover:text-pixlo-teal hover:font-semibold">Policies</a>
+          <a href="mailto:pixloholidays@gmail.com" class="transition hover:text-pixlo-teal hover:font-semibold">Contact</a>
         </div>
       </div>
     </footer>
