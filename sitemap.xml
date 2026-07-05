@@ -51,12 +51,44 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Policies Section -->
-  <url>
-    <loc>https://pixloholidays.com/#policies</loc>
-    <lastmod>2026-07-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+   <!-- Policies Section -->
+   <url>
+     <loc>https://pixloholidays.com/#policies</loc>
+     <lastmod>2026-07-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.7</priority>
+   </url>
 
-</urlset>
+   <!-- Thailand Tour -->
+   <url>
+     <loc>https://pixloholidays.com/#thailand</loc>
+     <lastmod>2026-07-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+
+   <!-- Vietnam Tour -->
+   <url>
+     <loc>https://pixloholidays.com/#vietnam</loc>
+     <lastmod>2026-07-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+
+   <!-- Philippines Tour -->
+   <url>
+     <loc>https://pixloholidays.com/#philippines</loc>
+     <lastmod>2026-07-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+
+   <!-- Malaysia Tour -->
+   <url>
+     <loc>https://pixloholidays.com/#malaysia</loc>
+     <lastmod>2026-07-05</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>0.8</priority>
+   </url>
+
+ </urlset>
