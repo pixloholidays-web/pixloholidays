@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
     <title>Pixlo Holidays | Signature Travel Experiences in Himachal, Goa & Kerala</title>
     <meta
       name="description"
@@ -19,18 +22,27 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pixloholidays.com/" />
     <meta property="og:image" content="https://pixloholidays.com/pixlo-logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Pixlo Holidays - Premium Travel Experiences" />
     <meta property="og:site_name" content="Pixlo Holidays" />
+    <meta property="og:locale" content="en_IN" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pixlo Holidays | Signature Travel Experiences" />
     <meta name="twitter:description" content="Premium travel journeys across Himachal, Goa, and Kerala with seamless planning and immersive experiences." />
     <meta name="twitter:image" content="https://pixloholidays.com/pixlo-logo.png" />
+    <meta name="twitter:image:alt" content="Pixlo Holidays Logo" />
+    <meta name="twitter:creator" content="@pixloholidays" />
     
     <!-- Performance optimizations -->
     <meta name="theme-color" content="#0F172A" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="application-name" content="Pixlo Holidays" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -60,6 +72,9 @@
       rel="stylesheet"
     />
     
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
@@ -69,37 +84,78 @@
       "url": "https://pixloholidays.com/",
       "logo": "https://pixloholidays.com/pixlo-logo.png",
       "description": "Pixlo Holidays crafts premium, thoughtfully designed travel journeys across Himachal, Goa, and Kerala with seamless planning and immersive experiences.",
+      "sameAs": [
+        "https://www.facebook.com/pixloholidays",
+        "https://www.instagram.com/pixloholidays",
+        "https://wa.me/917021662074"
+      ],
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "IN"
+        "addressCountry": "IN",
+        "addressRegion": "India"
       },
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91-7021662074",
         "contactType": "Customer Service",
-        "availableLanguage": ["English", "Hindi"]
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": ["IN"]
       },
-      "offers": {
-        "@type": "Offer",
-        "category": "Travel Packages",
-        "availableTour": [
+      "priceRange": "₹₹₹",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tour Packages",
+        "itemListElement": [
           {
-            "@type": "TouristTrip",
+            "@type": "Offer",
             "name": "Himachal: Shimla & Manali Tour",
-            "description": "5 Nights / 6 Days hill journey through colonial charm, alpine valleys, and snow-dotted adventures"
+            "description": "5 Nights / 6 Days hill journey through colonial charm, alpine valleys, and snow-dotted adventures. Experience Shimla's colonial heritage, Kufri valley, Solang adventures, and Manali's alpine beauty.",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://pixloholidays.com/#himachal"
           },
           {
-            "@type": "TouristTrip",
+            "@type": "Offer",
             "name": "Go Goa: North & South Goa Tour",
-            "description": "3 Nights / 4 Days coastal escape blending sunlit beaches and heritage sites"
+            "description": "3 Nights / 4 Days coastal escape blending sunlit beaches, heritage sites, scenic viewpoints, and relaxed evenings by the sea.",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://pixloholidays.com/#goa"
           },
           {
-            "@type": "TouristTrip",
+            "@type": "Offer",
             "name": "Magical Kerala Tour",
-            "description": "4 Nights / 5 Days journey from Cochin to Munnar, Thekkady, and Alleppey"
+            "description": "4 Nights / 5 Days serene southern journey from Cochin to Munnar, Thekkady, and Alleppey, unfolding tea gardens, wildlife, culture, and backwaters.",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "url": "https://pixloholidays.com/#kerala"
           }
         ]
       }
+    }
+    </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pixlo Holidays",
+      "url": "https://pixloholidays.com",
+      "logo": "https://pixloholidays.com/pixlo-logo.png",
+      "description": "Premium travel agency offering curated journeys across Himachal, Goa, and Kerala",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-7021662074",
+        "contactType": "Customer Support",
+        "email": "pixloholidays@gmail.com"
+      },
+      "sameAs": [
+        "https://www.facebook.com/pixloholidays",
+        "https://www.instagram.com/pixloholidays",
+        "https://wa.me/917021662074"
+      ],
+      "areaServed": "IN"
     }
     </script>
     <style>
@@ -156,6 +212,38 @@
         object-fit: contain;
         padding: 0.25rem;
       }
+      
+      /* Social Media Icon Animations */
+      .social-icon {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+      }
+      .social-icon:hover {
+        transform: scale(1.15) translateY(-3px);
+      }
+      
+      /* Image Optimization */
+      img[loading="lazy"] {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+      img[loading="lazy"].loading {
+        opacity: 0.7;
+      }
+      
+      /* Performance: Reduce motion for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+      
+      /* Smooth link transitions */
+      a {
+        transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+      }
 
     </style>
   </head>
@@ -181,6 +269,15 @@
         <span>Policies</span>
         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-pixlo-teal transition-all group-hover:w-full"></span>
       </a>
+      <!-- Social Media Icons in Header -->
+      <div class="flex items-center gap-3 border-l border-slate-300 pl-6">
+        <a href="https://www.instagram.com/pixloholidays" target="_blank" rel="noopener noreferrer" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-600 transition hover:text-white hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500" aria-label="Follow us on Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/pixloholidays" target="_blank" rel="noopener noreferrer" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-600 transition hover:text-white hover:bg-blue-600" aria-label="Follow us on Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
       <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20escape." target="_blank" rel="noopener noreferrer" class="rounded-full bg-pixlo-accent px-5 py-2.5 font-semibold text-white transition hover:bg-amber-600 shadow-lg hover:shadow-xl" aria-label="Plan your escape via WhatsApp">
         Plan Your Escape
       </a>
@@ -279,7 +376,7 @@
         </div>
 
         <div class="space-y-8">
-          <article class="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-soft">
+          <article id="himachal" class="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-soft">
             <div class="lg:grid lg:grid-cols-[2fr_1fr]">
               <div class="p-6 sm:p-8 lg:p-10">
                 <div class="flex flex-wrap items-center gap-3">
@@ -398,7 +495,7 @@
             </div>
           </article>
 
-          <article class="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-soft">
+          <article id="goa" class="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-soft">
             <div class="lg:grid lg:grid-cols-[2fr_1fr]">
               <div class="p-6 sm:p-8 lg:p-10">
                 <div class="flex flex-wrap items-center gap-3">
@@ -505,11 +602,7 @@
             </div>
           </article>
 
-          <article class="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-soft">
-            <div class="lg:grid lg:grid-cols-[2fr_1fr]">
-              <div class="p-6 sm:p-8 lg:p-10">
-                <div class="flex flex-wrap items-center gap-3">
-                  <span class="rounded-full bg-pixlo-teal/10 px-3 py-1 text-sm font-semibold text-pixlo-teal">Kerala</span>
+          <article id="kerala" class="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-soft">
                   <span class="text-sm text-slate-500">4 Nights / 5 Days</span>
                 </div>
                 <h3 class="mt-4 text-2xl font-bold text-pixlo-navy sm:text-3xl">Magical Kerala Tour</h3>
@@ -707,15 +800,46 @@
     </main>
 
     <footer class="border-t border-slate-200 bg-white/90">
-      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-slate-500 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div>
-          <p>© 2026 Pixlo Holidays. Crafted for memorable journeys.</p>
-          <a href="mailto:pixloholidays@gmail.com" class="mt-1 inline-flex font-medium text-pixlo-teal hover:text-pixlo-navy">pixloholidays@gmail.com</a>
+      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="grid gap-8 md:grid-cols-3">
+          <!-- Branding & Contact -->
+          <div>
+            <p class="font-semibold text-pixlo-navy text-lg mb-2">Pixlo Holidays</p>
+            <p class="text-sm text-slate-600 mb-3">Crafted for memorable journeys.</p>
+            <a href="mailto:pixloholidays@gmail.com" class="text-sm font-medium text-pixlo-teal hover:text-pixlo-navy transition">pixloholidays@gmail.com</a>
+            <p class="text-xs text-slate-500 mt-2">📞 +91-7021662074</p>
+          </div>
+          
+          <!-- Quick Links -->
+          <div>
+            <p class="font-semibold text-pixlo-navy mb-4 text-sm">Quick Links</p>
+            <div class="flex flex-col gap-2">
+              <a href="#tours" class="text-sm text-slate-600 transition hover:text-pixlo-teal hover:font-semibold">Destinations</a>
+              <a href="#policies" class="text-sm text-slate-600 transition hover:text-pixlo-teal hover:font-semibold">Policies</a>
+              <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20escape." target="_blank" rel="noopener noreferrer" class="text-sm text-slate-600 transition hover:text-pixlo-teal hover:font-semibold">WhatsApp Support</a>
+            </div>
+          </div>
+          
+          <!-- Social Media -->
+          <div>
+            <p class="font-semibold text-pixlo-navy mb-4 text-sm">Follow Us</p>
+            <div class="flex gap-4">
+              <a href="https://www.instagram.com/pixloholidays" target="_blank" rel="noopener noreferrer" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white transition hover:shadow-lg hover:scale-110" aria-label="Follow us on Instagram">
+                <i class="fab fa-instagram text-lg"></i>
+              </a>
+              <a href="https://www.facebook.com/pixloholidays" target="_blank" rel="noopener noreferrer" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white transition hover:shadow-lg hover:scale-110" aria-label="Follow us on Facebook">
+                <i class="fab fa-facebook-f text-lg"></i>
+              </a>
+              <a href="https://wa.me/917021662074" target="_blank" rel="noopener noreferrer" class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-white transition hover:shadow-lg hover:scale-110" aria-label="Chat with us on WhatsApp">
+                <i class="fab fa-whatsapp text-lg"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="flex gap-4">
-          <a href="#tours" class="transition hover:text-pixlo-teal hover:font-semibold">Destinations</a>
-          <a href="#policies" class="transition hover:text-pixlo-teal hover:font-semibold">Policies</a>
-          <a href="mailto:pixloholidays@gmail.com" class="transition hover:text-pixlo-teal hover:font-semibold">Contact</a>
+        
+        <!-- Copyright -->
+        <div class="border-t border-slate-200 mt-8 pt-6 text-center text-xs text-slate-500">
+          <p>© 2026 Pixlo Holidays. All rights reserved. | <a href="#home" class="hover:text-pixlo-teal transition">Back to Top</a></p>
         </div>
       </div>
     </footer>
