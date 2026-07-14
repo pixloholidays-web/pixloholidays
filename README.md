@@ -7,7 +7,7 @@ A premium, GitHub Pages-compatible static travel website designed for maximum co
 - **No Booking Fees** - Free custom itinerary planning
 - **Personal Travel Expert** - Dedicated WhatsApp support
 - **500+ Happy Travelers** - 4.9★ average rating
-- **Domestic & International Packages** - India, Thailand, Vietnam, Philippines, Malaysia, Bali
+- **Domestic & International Packages** - Himachal, Goa, Kerala, Thailand, Vietnam, Philippines, Malaysia, Bali
 - **Mobile-First Design** - Responsive and accessible
 - **PWA Support** - Installable on mobile devices
 - **SEO Optimized** - JSON-LD structured data, sitemap, robots.txt
@@ -22,32 +22,41 @@ pixlo-holidays-website/
 │       └── deploy.yml       # GitHub Actions deployment workflow
 ├── assets/
 │   ├── images/
-│   │   ├── destinations/    # Destination hero images
-│   │   ├── gallery/         # Instagram gallery images
-│   │   ├── packages/        # Package card images
-│   │   └── testimonials/    # Customer photos
-│   └── icons/             # Favicon and PWA icons
+│   │   ├── destinations/    # Destination hero images (webp)
+│   │   └── og-*.webp        # Open Graph social share images
+│   ├── icons/             # Favicon and PWA icons
+│   ├── domestic/          # Domestic destination assets
+│   └── international/      # International destination assets
 ├── css/
-│   └── tailwind.css         # Compiled Tailwind CSS
+│   ├── tailwind.css         # Compiled Tailwind CSS (homepage)
+│   └── pixlo-theme.css      # Shared theme for inner pages
 ├── js/
-│   └── main.js              # Main JavaScript functionality
-├── data/
-│   ├── packages.json        # Package data
-│   ├── testimonials.json    # Customer testimonials
-│   ├── gallery.json         # Instagram gallery
-│   └── destinations.json    # Destination data
+│   └── components.js        # Header/footer partial loader + interactions
+├── components/
+│   ├── header.html          # Reusable site header partial
+│   └── footer.html          # Reusable site footer partial
 ├── index.html               # Homepage
 ├── domestic.html            # Domestic packages page
 ├── international.html       # International packages page
 ├── contact.html             # Contact page
+├── goa-tour-packages.html        # Goa package page
+├── kerala-tour-packages.html      # Kerala package page
+├── himachal-tour-packages.html    # Himachal package page
+├── thailand-tour-packages.html    # Thailand package page
+├── vietnam-tour-packages.html     # Vietnam package page
+├── philippines-tour-packages.html # Philippines package page
+├── malaysia-tour-packages.html    # Malaysia package page
+├── bali-tour-packages.html        # Bali package page
 ├── privacy.html             # Privacy policy
 ├── refund.html              # Refund policy
 ├── terms.html               # Terms & conditions
+├── 404.html                 # Custom error page
 ├── manifest.json            # PWA manifest
 ├── browserconfig.xml        # Windows tiles config
 ├── humans.txt               # Human-readable site info
 ├── robots.txt               # Search engine directives
-└── sitemap.xml              # XML sitemap
+├── sitemap.xml              # XML sitemap
+└── sw.js                    # Service worker (PWA)
 ```
 
 ## Local Development
@@ -62,12 +71,14 @@ pixlo-holidays-website/
    ```bash
    # Using Python
    python -m http.server 8000
-   
+
    # Using Node.js
    npx serve
    ```
 
 3. No build process required - the site uses pre-compiled CSS.
+
+> **Note:** The header and footer are loaded as HTML partials via `js/components.js` (fetch). When opening pages directly via `file://`, the browser may block these fetches — use a local server (above) to see the header/footer render correctly.
 
 ## GitHub Pages Deployment
 
@@ -94,7 +105,7 @@ pixlo-holidays-website/
 
 - **Open Graph** - Rich social media previews
 - **Twitter Cards** - Optimized for Twitter sharing
-- **JSON-LD Schema** - TravelAgency, Organization, FAQ, Website, Product
+- **JSON-LD Schema** - TravelAgency, Organization, FAQ, Website, Product, BreadcrumbList
 - **Canonical URLs** - Prevents duplicate content
 - **Sitemap** - XML sitemap for search engines
 - **Robots.txt** - Search engine directives
@@ -117,33 +128,32 @@ pixlo-holidays-website/
 - **Trust Signals** - No booking fees, free planning, 24/7 support, GST registered
 - **Package Cards** - Price visible upfront, rating, duration, CTA buttons
 - **Floating WhatsApp Button** - Always visible on mobile
-- **Testimonials** - Real customer reviews with photos
+- **Testimonials** - Real customer reviews
 - **FAQ Section** - AI-search optimized questions
 
 ## Customization
 
 ### Update Contact Information
-Edit the following in all HTML files:
+Edit the following in `components/header.html`, `components/footer.html`, and all HTML files:
 - WhatsApp number: `+91-7021662074`
 - Email: `pixloholidays@gmail.com`
 
 ### Add New Packages
-1. Add package data to `data/packages.json`
-2. Create a new package page (e.g., `new-package.html`)
-3. Add to navigation in all HTML files
+1. Create a new package page (e.g., `new-package.html`) modeled on an existing `*tour-packages.html` file
+2. Add the destination card to `international.html` or `domestic.html`
+3. Add the destination image to `assets/images/destinations/`
+4. Add the Open Graph image to `assets/images/` (e.g., `og-new.webp`)
 
 ### Update Images
 Replace images in `assets/images/` with your own WebP images. Recommended sizes:
 - Hero images: 1920x1080px
 - Destination cards: 800x600px
-- Gallery thumbnails: 400x400px
-- Gallery full: 1200x1200px
+- OG share images: 1200x630px
 
 ## Browser Support
 
 - Chrome, Firefox, Safari, Edge (latest versions)
 - Mobile browsers (iOS Safari, Android Chrome)
-- IE11+ (with graceful degradation)
 
 ## License
 
