@@ -924,4 +924,9 @@ a { transition: color 0.2s, background 0.2s, transform 0.2s; }
   .itinerary-card { padding: 24px; }
   .contact-info-card, .contact-form-card, .map-card { padding: 24px; }
   .sidebar-card { position: static; }
+  /* Collapse the inline 2-col layout (main + sidebar) used on tour pages */
+  div[style*="grid-template-columns:2fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
 }
