@@ -656,7 +656,7 @@
     .planner-form select {
       width: 100%;
       min-width: 0;
-      padding: 12px 36px 12px 16px;
+      padding: 12px 28px 12px 16px;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.15);
       background: rgba(255, 255, 255, 0.08);
@@ -669,10 +669,24 @@
       cursor: pointer;
       -webkit-appearance: none;
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 3.5l3.5 3.5 3.5-3.5' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='1.5'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 14px center;
+      background-position: right 10px center;
       transform: translateZ(0); /* Fixes iOS Safari select width quirk */
+    }
+    #destination {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E🌍%3C/text%3E%3C/svg%3E");
+    }
+    #travel-month {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E📅%3C/text%3E%3C/svg%3E");
+    }
+    #adults {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E👤%3C/text%3E%3C/svg%3E");
+    }
+    #budget {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E💰%3C/text%3E%3C/svg%3E");
+    }
+    #travel-style {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E✈️%3C/text%3E%3C/svg%3E");
     }
     .planner-form select:focus {
       border-color: var(--pixlo-amber);
@@ -1453,7 +1467,7 @@
 
         <form id="trip-planner-form" class="planner-form">
           <select id="destination" name="destination" required>
-            <option value="" disabled selected>🌍 Destination</option>
+            <option value="" disabled selected>Destination 🌍</option>
             <option value="Himachal">Himachal</option>
             <option value="Goa">Goa</option>
             <option value="Kerala">Kerala</option>
@@ -1465,7 +1479,7 @@
           </select>
 
           <select id="travel-month" name="travel-month" required>
-            <option value="" disabled selected>📅Month</option>
+            <option value="" disabled selected>Travel Month📅</option>
             <option value="January">January</option>
             <option value="February">February</option>
             <option value="March">March</option>
@@ -1481,15 +1495,15 @@
           </select>
 
           <select id="adults" name="adults" required>
-            <option value="1">👤 1 Adult</option>
-            <option value="2" selected>👤 2 Adults</option>
-            <option value="3">👤 3 Adults</option>
-            <option value="4">👤 4 Adults</option>
-            <option value="5+">👤 5+ Adults</option>
+            <option value="1">1 Adult 👤</option>
+            <option value="2" selected>2 Adults 👤</option>
+            <option value="3">3 Adults 👤</option>
+            <option value="4">4 Adults 👤</option>
+            <option value="5+">5+ Adults 👤</option>
           </select>
 
           <select id="budget" name="budget" required>
-            <option value="" disabled selected>💰Budget</option>
+            <option value="" disabled selected>Budget Range💰</option>
             <option value="15000-25000">₹15,000 - ₹25,000</option>
             <option value="25000-40000">₹25,000 - ₹40,000</option>
             <option value="40000-60000">₹40,000 - ₹60,000</option>
@@ -1498,7 +1512,7 @@
           </select>
 
           <select id="travel-style" name="travel-style" required>
-            <option value="" disabled selected>✈️ Travel Style</option>
+            <option value="" disabled selected>Travel Style ✈️</option>
             <option value="Relaxed">Relaxed</option>
             <option value="Adventure">Adventure</option>
             <option value="Luxury">Luxury</option>
