@@ -650,13 +650,13 @@
 
     .planner-form {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 12px;
     }
     .planner-form select {
       width: 100%;
-      min-width: 0; /* Prevents iOS Safari from sizing the grid column to the select's intrinsic content width */
-      padding: 12px 16px;
+      min-width: 0;
+      padding: 12px 36px 12px 16px;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.15);
       background: rgba(255, 255, 255, 0.08);
@@ -669,9 +669,10 @@
       cursor: pointer;
       -webkit-appearance: none;
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='white' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 3.5l3.5 3.5 3.5-3.5' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='1.5'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 14px center;
+      transform: translateZ(0); /* Fixes iOS Safari select width quirk */
     }
     .planner-form select:focus {
       border-color: var(--pixlo-amber);
@@ -1285,7 +1286,7 @@
       .hero-inner { grid-template-columns: 1fr; }
       .dest-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: repeat(2, 1fr); }
-      .planner-form { grid-template-columns: repeat(3, 1fr); }
+      .planner-form { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .planner-form .btn-submit { grid-column: span 3; }
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -1302,7 +1303,7 @@
 
       .planner-section { padding: 0 16px 60px; }
       .planner-card { padding: 28px 24px; }
-      .planner-form { grid-template-columns: 1fr 1fr; }
+      .planner-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
       .planner-form .btn-submit { grid-column: span 2; }
 
       .section { padding: 0 16px 60px; }
@@ -1453,7 +1454,7 @@
         <form id="trip-planner-form" class="planner-form">
           <select id="destination" name="destination" required>
             <option value="" disabled selected>🌍 Destination</option>
-            <option value="Himachal">Himachal Pradesh</option>
+            <option value="Himachal">Himachal</option>
             <option value="Goa">Goa</option>
             <option value="Kerala">Kerala</option>
             <option value="Thailand">Thailand</option>
@@ -1464,7 +1465,7 @@
           </select>
 
           <select id="travel-month" name="travel-month" required>
-            <option value="" disabled selected>📅 Travel Month</option>
+            <option value="" disabled selected>📅Month</option>
             <option value="January">January</option>
             <option value="February">February</option>
             <option value="March">March</option>
@@ -1488,7 +1489,7 @@
           </select>
 
           <select id="budget" name="budget" required>
-            <option value="" disabled selected>💰 Budget Range</option>
+            <option value="" disabled selected>💰Budget</option>
             <option value="15000-25000">₹15,000 - ₹25,000</option>
             <option value="25000-40000">₹25,000 - ₹40,000</option>
             <option value="40000-60000">₹40,000 - ₹60,000</option>
