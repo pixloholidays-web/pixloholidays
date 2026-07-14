@@ -9,86 +9,111 @@
   <!-- Homepage -->
   <url>
     <loc>https://pixloholidays.com/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Destinations Section -->
+  <!-- Main Pages -->
   <url>
-    <loc>https://pixloholidays.com/#tours</loc>
-    <lastmod>2026-07-05</lastmod>
+    <loc>https://pixloholidays.com/domestic.html</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Himachal Tour -->
   <url>
-    <loc>https://pixloholidays.com/#himachal</loc>
-    <lastmod>2026-07-05</lastmod>
+    <loc>https://pixloholidays.com/international.html</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-<image:loc>https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
-<image:title>Himachal: Shimla &amp; Manali Tour - Pixlo Holidays</image:title>
-      <image:caption>5 Nights / 6 Days hill journey through colonial charm, alpine valleys, and snow-dotted adventures</image:caption>
-    </image:image>
+    <priority>0.9</priority>
   </url>
 
-  <!-- Goa Tour -->
   <url>
-    <loc>https://pixloholidays.com/#goa</loc>
-    <lastmod>2026-07-05</lastmod>
+    <loc>https://pixloholidays.com/contact.html</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Kerala Tour -->
+  <!-- Domestic Package Pages -->
   <url>
-    <loc>https://pixloholidays.com/#kerala</loc>
-    <lastmod>2026-07-05</lastmod>
+    <loc>https://pixloholidays.com/goa-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-   <!-- Policies Section -->
-   <url>
-     <loc>https://pixloholidays.com/#policies</loc>
-     <lastmod>2026-07-05</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.7</priority>
-   </url>
+  <url>
+    <loc>https://pixloholidays.com/kerala-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <!-- Thailand Tour -->
-   <url>
-     <loc>https://pixloholidays.com/#thailand</loc>
-     <lastmod>2026-07-05</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.8</priority>
-   </url>
+  <url>
+    <loc>https://pixloholidays.com/himachal-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <!-- Vietnam Tour -->
-   <url>
-     <loc>https://pixloholidays.com/#vietnam</loc>
-     <lastmod>2026-07-05</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.8</priority>
-   </url>
+  <!-- International Package Pages -->
+  <url>
+    <loc>https://pixloholidays.com/thailand-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <!-- Philippines Tour -->
-   <url>
-     <loc>https://pixloholidays.com/#philippines</loc>
-     <lastmod>2026-07-05</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.8</priority>
-   </url>
+  <url>
+    <loc>https://pixloholidays.com/vietnam-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-   <!-- Malaysia Tour -->
-   <url>
-     <loc>https://pixloholidays.com/#malaysia</loc>
-     <lastmod>2026-07-05</lastmod>
-     <changefreq>monthly</changefreq>
-     <priority>0.8</priority>
-   </url>
+  <url>
+    <loc>https://pixloholidays.com/philippines-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
- </urlset>
+  <url>
+    <loc>https://pixloholidays.com/malaysia-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pixloholidays.com/bali-tour-packages.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Policy Pages -->
+  <url>
+    <loc>https://pixloholidays.com/privacy.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://pixloholidays.com/refund.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://pixloholidays.com/terms.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

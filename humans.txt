@@ -1,0 +1,20 @@
+Pixlo Holidays
+Crafted for memorable journeys
+
+/* TEAM */
+Founder: Pixlo Holidays Team
+Contact: pixloholidays@gmail.com
+WhatsApp: +91-7021662074
+
+/* THANKS */
+Travelers: 500+ happy travelers who trusted us
+Photographers: Unsplash and Pexels contributors
+Icons: Font Awesome
+CSS Framework: Tailwind CSS
+
+/* SITE */
+Language: HTML5, CSS3, JavaScript
+Doctype: HTML5
+Components: Static HTML, JSON data, WebP images
+Responsive: Mobile-first design
+Performance: Optimized for Lighthouse 95+ score

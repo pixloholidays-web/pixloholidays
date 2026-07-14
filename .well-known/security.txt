@@ -1,0 +1,4 @@
+contact: mailto:pixloholidays@gmail.com
+expires: 2026-12-31T23:59:00.000Z
+preferred-languages: en
+policy: https://pixloholidays.com/privacy.html
