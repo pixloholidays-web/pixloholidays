@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script>document.documentElement.classList.add('js');</script>
   <meta name="language" content="English" />
   <meta name="revisit-after" content="7 days" />
 <title>Pixlo Holidays | Plan Your Dream Holiday—Without Paying Booking Fees</title>
@@ -1328,15 +1329,20 @@
       .hero-actions a { justify-content: center; }
     }
 
-    /* Scroll Reveal */
-    .reveal {
+    /* Scroll Reveal — only hide when JS is available, so content is never permanently invisible */
+    .js .reveal {
       opacity: 0;
       transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .reveal.active {
+    .js .reveal.active {
       opacity: 1;
       transform: translateY(0);
+    }
+    /* Safety net: if anything goes wrong, reveal everything after load */
+    .js .reveal.reveal-fallback {
+      opacity: 1 !important;
+      transform: none !important;
     }
   </style>
 </head>
@@ -1806,20 +1812,26 @@
 
   <script>
     // ===== MOBILE MENU =====
-    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-      this.querySelector('i').classList.toggle('fa-bars');
-      this.querySelector('i').classList.toggle('fa-times');
-    });
-
-    // Close mobile menu on link click
-    document.querySelectorAll('.mobile-menu-inner a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.remove('open');
-        document.getElementById('mobileMenuBtn').querySelector('i').classList.add('fa-bars');
-        document.getElementById('mobileMenuBtn').querySelector('i').classList.remove('fa-times');
+    // The header (and #mobileMenuBtn) is injected asynchronously by js/components.js,
+    // so it may not exist when this script first runs. Guard it and let components.js handle wiring.
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', function() {
+        mobileMenu.classList.toggle('open');
+        const icon = this.querySelector('i');
+        if (icon) { icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times'); }
       });
-    });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll('.mobile-menu-inner a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          const icon = mobileMenuBtn.querySelector('i');
+          if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-times'); }
+        });
+      });
+    }
 
     // ===== FAQ ACCORDION =====
     document.querySelectorAll('.faq-question').forEach(q => {
@@ -1840,15 +1852,41 @@
     });
 
     // ===== SCROLL REVEAL =====
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    (function() {
+      const reveals = document.querySelectorAll('.reveal');
+      // Fallback: no IntersectionObserver support -> show everything immediately
+      if (!('IntersectionObserver' in window)) {
+        reveals.forEach(el => el.classList.add('active'));
+        return;
+      }
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      reveals.forEach(el => revealObserver.observe(el));
+
+      // Safety net: ensure nothing stays invisible if the observer misfires (e.g. iOS Safari quirk)
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          reveals.forEach(el => {
+            const r = el.getBoundingClientRect();
+            const inView = r.top < (window.innerHeight || document.documentElement.clientHeight) && r.bottom > 0;
+            if (inView && !el.classList.contains('active')) {
+              el.classList.add('active');
+            }
+          });
+        }, 1500);
+      });
+      // Final fallback: reveal all after 3s no matter what
+      setTimeout(() => {
+        reveals.forEach(el => el.classList.add('reveal-fallback'));
+      }, 3000);
+    })();
 
     // ===== COUNTER ANIMATION =====
     const counterObserver = new IntersectionObserver((entries) => {
