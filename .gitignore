@@ -1,0 +1,9 @@
+# Ignore the dependencies folder
+node_modules/
+
+# Ignore the tests folder and all its contents
+tests/
+
+# Ignore package configuration files (Not recommended)
+package.json
+package-lock.json

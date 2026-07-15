@@ -39,6 +39,7 @@
   <meta name="application-name" content="Pixlo Holidays" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/tailwind.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -85,7 +86,7 @@
           "name": "Himachal: Shimla & Manali Tour",
           "description": "5 Nights / 6 Days hill journey through colonial charm, alpine valleys, and snow-dotted adventures.",
           "priceCurrency": "INR",
-          "price": "29999",
+          "price": "14999",
           "availability": "https://schema.org/InStock",
           "url": "himachal-tour-packages.html"
         },
@@ -94,7 +95,7 @@
           "name": "Go Goa: North & South Goa Tour",
           "description": "3 Nights / 4 Days coastal escape blending sunlit beaches, heritage sites, and scenic viewpoints.",
           "priceCurrency": "INR",
-          "price": "18999",
+          "price": "8899",
           "availability": "https://schema.org/InStock",
           "url": "goa-tour-packages.html"
         },
@@ -103,7 +104,7 @@
           "name": "Magical Kerala Tour",
           "description": "4 Nights / 5 Days serene southern journey from Cochin to Munnar, Thekkady, and Alleppey.",
           "priceCurrency": "INR",
-          "price": "24999",
+          "price": "23000",
           "availability": "https://schema.org/InStock",
           "url": "kerala-tour-packages.html"
         }
@@ -479,6 +480,58 @@
       margin-bottom: 28px;
     }
     .hero-tagline i { color: var(--pixlo-amber); }
+
+    .hero-quick-form {
+      margin: 24px 0;
+      max-width: 480px;
+    }
+    .quick-input-group {
+      display: flex;
+      background: white;
+      border: 1px solid rgba(0, 105, 92, 0.2);
+      border-radius: 50px;
+      padding: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+    .quick-input-group select {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 8px 20px;
+      color: var(--pixlo-slate);
+      background: transparent;
+      cursor: pointer;
+    }
+    .btn-quick-go {
+      background: var(--pixlo-teal-dark);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-quick-go:hover {
+      background: var(--pixlo-teal);
+      transform: scale(1.02);
+    }
+    .hero-rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 14px;
+    }
+    .hero-rating-badge .stars {
+      color: var(--pixlo-amber);
+      font-weight: 700;
+    }
 
     .hero-actions {
       display: flex;
@@ -1382,21 +1435,39 @@
       <div class="hero-inner">
         <div>
           <div class="hero-badge">
-            <i class="fas fa-bolt"></i> Zero Booking Fees · 100% Free Travel Planning
+            <i class="fas fa-bolt"></i> 100% Free Travel Planning & Expert Support
           </div>
-          <h1>Get Your <span class="warm-highlight">Free Custom Travel Plan</span> & Compare the <span class="warm-highlight underline-accent">Best Deals</span> Before You Book.<br>
-          </h1>
-          <p>We create a personalized itinerary, compare trusted travel options, and help you choose <span class="highlight-text"> the best value—all completely </span>free.</p>
-          <div class="hero-tagline">
-            <i class="fas fa-check-circle"></i> Tell us your destination. We'll plan the perfect trip for you.
-          </div>
-          <div class="hero-actions">
-            <a href="#trip-planner" class="btn-primary">
-              <i class="fas fa-wand-magic-sparkles"></i> Get My Free Travel Plan
-            </a>
-            <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20holiday." target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
+          <h1>Your Dream Vacation.<br>Custom Planned.<br><span class="warm-highlight underline-accent">Zero Booking Fees.</span></h1>
+          <p>Tell us where you want to go. Our experts design your custom day-by-day itinerary and match you with the best rates—completely free.</p>
+          
+          <!-- QUICK ACTION UX WIDGET -->
+          <form class="hero-quick-form" onsubmit="event.preventDefault(); document.getElementById('destination').value = document.getElementById('hero-dest-select').value; document.getElementById('trip-planner').scrollIntoView({behavior: 'smooth'});">
+            <div class="quick-input-group">
+              <label for="hero-dest-select" class="sr-only">Where is your next escape?</label>
+              <select id="hero-dest-select" required>
+                <option value="" disabled selected>Where is your next escape?</option>
+                <option value="Himachal">Himachal Pradesh</option>
+                <option value="Goa">Goa</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Bali">Bali</option>
+              </select>
+              <button type="submit" class="btn-quick-go">
+                <span>Start Planning</span> <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+
+          <div class="hero-actions-container">
+            <div class="hero-actions">
+              <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20holiday." target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
+            <div class="hero-rating-badge">
+              <span class="stars"><i class="fas fa-star"></i> 4.9★</span> (500+ Happy Travelers)
+            </div>
           </div>
         </div>
 
@@ -1448,7 +1519,7 @@
               <div class="label">Avg Rating</div>
             </div>
             <div class="hero-metric">
-              <div class="num">10</div>
+              <div class="num">30</div>
               <div class="label">Min Response</div>
             </div>
           </div>
@@ -1467,7 +1538,7 @@
 
         <form id="trip-planner-form" class="planner-form">
           <select id="destination" name="destination" required>
-            <option value="" disabled selected>Destination 🌍</option>
+            <option value="" disabled selected>Destination</option>
             <option value="Himachal">Himachal</option>
             <option value="Goa">Goa</option>
             <option value="Kerala">Kerala</option>
@@ -1479,7 +1550,7 @@
           </select>
 
           <select id="travel-month" name="travel-month" required>
-            <option value="" disabled selected>Travel Month📅</option>
+            <option value="" disabled selected>Travel Month</option>
             <option value="January">January</option>
             <option value="February">February</option>
             <option value="March">March</option>
@@ -1495,15 +1566,15 @@
           </select>
 
           <select id="adults" name="adults" required>
-            <option value="1">1 Adult 👤</option>
-            <option value="2" selected>2 Adults 👤</option>
-            <option value="3">3 Adults 👤</option>
-            <option value="4">4 Adults 👤</option>
-            <option value="5+">5+ Adults 👤</option>
+            <option value="1">1 Adult</option>
+            <option value="2" selected>2 Adults</option>
+            <option value="3">3 Adults</option>
+            <option value="4">4 Adults</option>
+            <option value="5+">5+ Adults</option>
           </select>
 
           <select id="budget" name="budget" required>
-            <option value="" disabled selected>Budget Range💰</option>
+            <option value="" disabled selected>Budget Range</option>
             <option value="15000-25000">₹15,000 - ₹25,000</option>
             <option value="25000-40000">₹25,000 - ₹40,000</option>
             <option value="40000-60000">₹40,000 - ₹60,000</option>
@@ -1512,7 +1583,7 @@
           </select>
 
           <select id="travel-style" name="travel-style" required>
-            <option value="" disabled selected>Travel Style ✈️</option>
+            <option value="" disabled selected>Travel Style</option>
             <option value="Relaxed">Relaxed</option>
             <option value="Adventure">Adventure</option>
             <option value="Luxury">Luxury</option>
@@ -1540,13 +1611,13 @@
           <div class="dest-card-img">
             <img src="assets/images/destinations/goa.webp" alt="Goa beaches and Portuguese heritage" title="Goa Tour Packages - Beaches & Portuguese Heritage" width="400" height="300" loading="lazy" />
             <div class="overlay"></div>
-            <span class="price-tag">₹18,999 onwards</span>
+            <span class="price-tag">₹8,899 onwards</span>
           </div>
           <div class="dest-card-body">
             <h3>Goa Tour Packages</h3>
             <p>Sun-kissed beaches, heritage sites, and vibrant nightlife</p>
             <div class="dest-card-meta">
-              <span class="duration">3 Days / 4 Nights</span>
+              <span class="duration">3 Nights / 4 Days</span>
               <span class="rating"><i class="fas fa-star"></i> 4.7★</span>
             </div>
           </div>
@@ -1556,13 +1627,13 @@
           <div class="dest-card-img">
             <img src="assets/images/destinations/kerala.webp" alt="Kerala backwaters and tea gardens" title="Kerala Tour Packages - Backwaters & Tea Gardens" width="400" height="300" loading="lazy" />
             <div class="overlay"></div>
-            <span class="price-tag">₹24,999 onwards</span>
+            <span class="price-tag">₹23,000 onwards</span>
           </div>
           <div class="dest-card-body">
             <h3>Kerala Tour Packages</h3>
             <p>Backwaters, tea gardens, and Ayurvedic wellness</p>
             <div class="dest-card-meta">
-              <span class="duration">4 Days / 5 Nights</span>
+              <span class="duration">4 Nights / 5 Days</span>
               <span class="rating"><i class="fas fa-star"></i> 4.9★</span>
             </div>
           </div>
@@ -1572,13 +1643,13 @@
           <div class="dest-card-img">
             <img src="assets/images/destinations/himachal.webp" alt="Himachal mountains and hill stations" title="Himachal Tour Packages - Mountains & Hill Stations" width="400" height="300" loading="lazy" />
             <div class="overlay"></div>
-            <span class="price-tag">₹29,999 onwards</span>
+            <span class="price-tag">₹14,999 onwards</span>
           </div>
           <div class="dest-card-body">
             <h3>Himachal Tour Packages</h3>
             <p>Snow peaks, colonial charm, and mountain adventures</p>
             <div class="dest-card-meta">
-              <span class="duration">5 Days / 6 Nights</span>
+              <span class="duration">5 Nights / 6 Days</span>
               <span class="rating"><i class="fas fa-star"></i> 4.8★</span>
             </div>
           </div>
@@ -1588,13 +1659,13 @@
           <div class="dest-card-img">
             <img src="assets/images/destinations/thailand.webp" alt="Thailand temples and beaches" title="Thailand Tour Packages - Temples & Beaches" width="400" height="300" loading="lazy" />
             <div class="overlay"></div>
-            <span class="price-tag">₹34,999 onwards</span>
+            <span class="price-tag">₹18,150 onwards</span>
           </div>
           <div class="dest-card-body">
             <h3>Thailand Tour Packages</h3>
             <p>Temples, beaches, and tropical adventures</p>
             <div class="dest-card-meta">
-              <span class="duration">4 Days / 5 Nights</span>
+              <span class="duration">4 Nights / 5 Days</span>
               <span class="rating"><i class="fas fa-star"></i> 4.8★</span>
             </div>
           </div>

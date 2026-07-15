@@ -150,6 +150,18 @@
 
     wireMobileMenu();
     setActiveLink();
+
+    // Inject WhatsApp float on all pages
+    if (!document.querySelector('.whatsapp-float')) {
+      const waFloat = document.createElement('a');
+      waFloat.href = 'https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20holiday.';
+      waFloat.target = '_blank';
+      waFloat.rel = 'noopener noreferrer';
+      waFloat.className = 'whatsapp-float';
+      waFloat.setAttribute('aria-label', 'Chat on WhatsApp');
+      waFloat.innerHTML = '<i class="fab fa-whatsapp"></i>';
+      document.body.appendChild(waFloat);
+    }
   }
 
   if (document.readyState === 'loading') {
