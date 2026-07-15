@@ -481,6 +481,58 @@
     }
     .hero-tagline i { color: var(--pixlo-amber); }
 
+    .hero-quick-form {
+      margin: 24px 0;
+      max-width: 480px;
+    }
+    .quick-input-group {
+      display: flex;
+      background: white;
+      border: 1px solid rgba(0, 105, 92, 0.2);
+      border-radius: 50px;
+      padding: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+    .quick-input-group select {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 8px 20px;
+      color: var(--pixlo-slate);
+      background: transparent;
+      cursor: pointer;
+    }
+    .btn-quick-go {
+      background: var(--pixlo-teal-dark);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-quick-go:hover {
+      background: var(--pixlo-teal);
+      transform: scale(1.02);
+    }
+    .hero-rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-top: 14px;
+    }
+    .hero-rating-badge .stars {
+      color: var(--pixlo-amber);
+      font-weight: 700;
+    }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -1383,21 +1435,39 @@
       <div class="hero-inner">
         <div>
           <div class="hero-badge">
-            <i class="fas fa-bolt"></i> Zero Booking Fees · 100% Free Travel Planning
+            <i class="fas fa-bolt"></i> 100% Free Travel Planning & Expert Support
           </div>
-          <h1>Get Your <span class="warm-highlight">Free Custom Travel Plan</span> & Compare the <span class="warm-highlight underline-accent">Best Deals</span> Before You Book.<br>
-          </h1>
-          <p>We create a personalized itinerary, compare trusted travel options, and help you choose <span class="highlight-text"> the best value—all completely </span>free.</p>
-          <div class="hero-tagline">
-            <i class="fas fa-check-circle"></i> Tell us your destination. We'll plan the perfect trip for you.
-          </div>
-          <div class="hero-actions">
-            <a href="#trip-planner" class="btn-primary">
-              <i class="fas fa-wand-magic-sparkles"></i> Get My Free Travel Plan
-            </a>
-            <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20holiday." target="_blank" rel="noopener noreferrer" class="btn-secondary">
-              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
+          <h1>Your Dream Vacation.<br>Custom Planned.<br><span class="warm-highlight underline-accent">Zero Booking Fees.</span></h1>
+          <p>Tell us where you want to go. Our experts design your custom day-by-day itinerary and match you with the best rates—completely free.</p>
+          
+          <!-- QUICK ACTION UX WIDGET -->
+          <form class="hero-quick-form" onsubmit="event.preventDefault(); document.getElementById('destination').value = document.getElementById('hero-dest-select').value; document.getElementById('trip-planner').scrollIntoView({behavior: 'smooth'});">
+            <div class="quick-input-group">
+              <label for="hero-dest-select" class="sr-only">Where is your next escape?</label>
+              <select id="hero-dest-select" required>
+                <option value="" disabled selected>Where is your next escape?</option>
+                <option value="Himachal">Himachal Pradesh</option>
+                <option value="Goa">Goa</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Bali">Bali</option>
+              </select>
+              <button type="submit" class="btn-quick-go">
+                <span>Start Planning</span> <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+
+          <div class="hero-actions-container">
+            <div class="hero-actions">
+              <a href="https://wa.me/917021662074?text=Hi%20Pixlo%20Holidays%21%20I%20want%20to%20plan%20my%20holiday." target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
+            <div class="hero-rating-badge">
+              <span class="stars"><i class="fas fa-star"></i> 4.9★</span> (500+ Happy Travelers)
+            </div>
           </div>
         </div>
 
