@@ -40,6 +40,7 @@ pixlo-holidays-website/
 ├── international.html       # International packages page
 ├── contact.html             # Contact page
 ├── goa-tour-packages.html        # Goa package page
+├── goa-express-tour-package.html # 2N/3D Goa Express Tour package page
 ├── kerala-tour-packages.html      # Kerala package page
 ├── himachal-tour-packages.html    # Himachal package page
 ├── thailand-tour-packages.html    # Thailand package page
