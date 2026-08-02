@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pixlo-holidays-cache-v3';
+const CACHE_NAME = 'pixlo-holidays-cache-v4';
 const PRECACHE_URLS = [
   './',
   'index.html',
@@ -10,6 +10,7 @@ const PRECACHE_URLS = [
   'terms.html',
   '404.html',
   'css/tailwind.css',
+  'css/pixlo-theme.css',
   'js/components.js',
   'manifest.json',
   'assets/icons/favicon.svg',
