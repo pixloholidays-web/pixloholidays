@@ -127,9 +127,11 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Pixlo Holidays",
+    "legalName": "Pixlo Holidays",
+    "alternateName": ["Pixlo", "PixloHolidays", "Pixlo Holidays Travel"],
     "url": "https://pixloholidays.com/",
     "logo": "https://pixloholidays.com/pixlo-logo.png",
-    "description": "Premium travel agency offering curated journeys across Himachal, Goa, and Kerala with no booking fees.",
+    "description": "Premium travel agency offering curated journeys across domestic and international destinations with no booking fees.",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-7021662074",
@@ -191,7 +193,8 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Pixlo Holidays",
-    "url": "https://pixloholidays.com",
+    "alternateName": ["Pixlo", "PixloHolidays"],
+    "url": "https://pixloholidays.com/",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://pixloholidays.com/?s={search_term_string}",
@@ -277,7 +280,7 @@
       transition: transform 0.3s;
     }
     .logo-link:hover img { transform: scale(1.05); }
-    .logo-text h1 {
+    .logo-text .logo-title {
       font-size: 20px;
       font-weight: 800;
       color: var(--pixlo-teal-dark);
@@ -1442,7 +1445,7 @@
     <a href="./" class="logo-link">
       <img src="pixlo-logo.png" alt="Pixlo Holidays logo" title="Pixlo Holidays - Your Travel Partner" width="180" height="40" loading="lazy" decoding="async" />
       <div class="logo-text">
-        <h1>Pixlo Holidays</h1>
+        <p class="logo-title">Pixlo Holidays</p>
         <span><span class="word-dream">Dream.</span> <span class="word-explore">Explore.</span> <span class="word-discover">Discover.</span></span>
       </div>
     </a>

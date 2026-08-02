@@ -276,6 +276,32 @@ A: Google Search Console shows: impressions, clicks, rankings, CTR.
 
 ---
 
+## 🔍 **Fixing Google's "Showing results for Pixel Holidays" Auto-Correct**
+
+### **Why Does This Happen?**
+1. **Unrecognized Brand Entity**: `Pixlo` is a unique, non-dictionary brand name. Google's algorithm compares it against high-frequency words like `Pixel` and assumes users made a typo.
+2. **Low Knowledge Graph Signals**: When a site/brand is new, Google lacks entity linkages (Google Business Profile, social profiles, directory citations) confirming `Pixlo Holidays` is a valid business entity.
+3. **Low Brand Search Volume**: Until enough users search `"Pixlo Holidays"` and click on your site, Google defaults to suggesting `Pixel Holidays`.
+
+### **How to Fix It (Step-by-Step)**
+
+1. **Claim Google Business Profile (Crucial Step #1)**:
+   - Create & verify a profile named **Pixlo Holidays** under *Travel Agency*.
+   - Link `https://pixloholidays.com`. This directly embeds your brand into Google's Knowledge Graph.
+
+2. **Request Re-Indexing in Search Console**:
+   - Go to Google Search Console -> URL Inspection -> `https://pixloholidays.com/` -> **Request Indexing**.
+
+3. **Consistent Brand Schema Markup**:
+   - `Organization` & `WebSite` JSON-LD schemas now include `legalName: "Pixlo Holidays"` and `alternateName: ["Pixlo", "PixloHolidays"]`.
+
+4. **Off-Page Brand Citations**:
+   - Ensure social accounts (@pixloholidays on Instagram, Facebook, LinkedIn, YouTube, X) use the exact name **Pixlo Holidays**.
+   - Create company profiles on Trustpilot, TripAdvisor, Justdial, and IndiaMART.
+
+---
+
 **Created:** 2026-07-05  
+**Updated:** 2026-08-02  
 **Domain:** pixloholidays.com  
 **Status:** Production Ready ✅
