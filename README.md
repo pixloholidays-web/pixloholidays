@@ -6,7 +6,7 @@ A premium, GitHub Pages-compatible static travel website designed for maximum co
 
 - **No Booking Fees** - Free custom itinerary planning
 - **Personal Travel Expert** - Dedicated WhatsApp support
-- **500+ Happy Travelers** - 4.9★ average rating
+- **Honest Trust Signals** - GST & MSME registered, transparent pricing, real reviews only
 - **Domestic & International Packages** - Himachal, Goa, Kerala, Thailand, Vietnam, Philippines, Malaysia, Bali
 - **Mobile-First Design** - Responsive and accessible
 - **PWA Support** - Installable on mobile devices
