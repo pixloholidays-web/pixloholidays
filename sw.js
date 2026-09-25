@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pixlo-holidays-cache-v4';
+const CACHE_NAME = 'pixlo-holidays-cache-v5';
 const PRECACHE_URLS = [
   './',
   'index.html',
